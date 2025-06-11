@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro Corban Black</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('logo-final.png');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 300px;
+    }
+
+    .form-container {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      margin-top: 260px;
+    }
+
+    h2 {
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn {
+      background-color: #D80000;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #a00000;
+    }
+
+    .info {
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Preencha seus dados</h2>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" id="nome" placeholder="Nome completo" required>
+      <input type="email" id="email" placeholder="Seu melhor e-mail" required>
+      <input type="tel" id="whatsapp" placeholder="WhatsApp com DDD" required>
+      <button type="submit" class="btn">Cadastrar Agora</button>
+    </form>
+    <div class="info">Você será redirecionado para o WhatsApp</div>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+      const msg = `Olá! Gostaria de me tornar um Corban Black!`;
+      const url = `https://wa.me/5548988570984?text=${encodeURIComponent(msg)}`;
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
