@@ -5,25 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Corban Black</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      height: 100%;
       background-color: #000;
       background-image: url('logo-final.png');
       background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 360px;
+      background-position: center 100px; /* 🔧 logo mais acima */
+      background-size: 420px;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      padding-bottom: 120px;
+      overflow: hidden;
     }
 
     .content {
-      text-align: center;
-      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* 🔧 muda de flex-end */
+      align-items: center;
+      padding-top: 400px; /* 🔧 empurra o texto mais perto da logo */
+      box-sizing: border-box;
     }
 
     h1 {
@@ -59,3 +61,4 @@
   </div>
 </body>
 </html>
+
